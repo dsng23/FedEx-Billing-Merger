@@ -30,7 +30,7 @@ elif workflow == "Inbound":
     st.markdown("""
     <div class="instruction-box">
         <strong>Inbound File Portal</strong><br> 
-        Upload ANY two Inbound Excel files below. Use the "Rows to skip" to bypass the junk titles. The system will auto-fill blanks, translate headers, automatically link the files using Shipment Number, and build your finalized report!
+        Upload the two Inbound Excel files below. Use the "Rows to skip" to bypass the junk titles. 
     </div>
     """, unsafe_allow_html=True)
 
@@ -38,12 +38,12 @@ elif workflow == "Inbound":
 
     with col1:
         st.markdown("**File 1 (Base Data)**")
-        file1 = st.file_uploader("📂 Upload Primary File", type=["xlsx", "xls", "csv"])
+        file1 = st.file_uploader("📂 Upload Inbound Dock Date File", type=["xlsx", "xls", "csv"])
         skip_rows_1 = st.number_input("⚙️ Rows to skip at top of File 1:", min_value=0, value=0)
 
     with col2:
         st.markdown("**File 2 (Data to Merge)**")
-        file2 = st.file_uploader("📂 Upload Secondary File", type=["xlsx", "xls", "csv"])
+        file2 = st.file_uploader("📂 Upload Inbound Shipment File", type=["xlsx", "xls", "csv"])
         skip_rows_2 = st.number_input("⚙️ Rows to skip at top of File 2:", min_value=0, value=0)
 
     with st.expander("❓ What does 'Rows to skip' mean?"):
